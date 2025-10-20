@@ -7,7 +7,7 @@ license = "MIT"
 repository = "https://github.com/canmi21/configme"
 readme = "README.md"
 keywords = ["server", "unix", "config", "sqlite"]
-categories = ["asynchronous", "configuration"]
+categories = ["asynchronous", "config"]
 [lib]
 path = "src/lib.rs"
 
