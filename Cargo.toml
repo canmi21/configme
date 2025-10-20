@@ -1,0 +1,38 @@
+[package]
+name = "configme"
+version = "1.0.0"
+edition = "2024"
+description = "Ensure your app’s config directory and SQLite setup are always ready to go."
+license = "MIT"
+repository = "https://github.com/canmi21/configme"
+readme = "README.md"
+keywords = ["server", "unix", "config", "sqlite"]
+categories = ["asynchronous", "configuration"]
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+shellexpand = "3"
+
+[dependencies.fancy-log]
+version = "0.1"
+optional = true
+
+[dependencies.sqlx]
+version = "0.7"
+optional = true
+features = ["sqlite", "runtime-tokio-rustls"]
+
+[features]
+default = []
+fancy = ["fancy-log"]
+sqlite = ["sqlx"]
+
+[[example]]
+name = "demo_fancy"
+required-features = ["fancy"]
+
+[[example]]
+name = "demo_sqlite"
+required-features = ["sqlite"]
