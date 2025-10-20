@@ -1,6 +1,6 @@
 [package]
 name = "configme"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2024"
 description = "Ensure your app’s config directory and SQLite setup are always ready to go."
 license = "MIT"
